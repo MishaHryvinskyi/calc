@@ -1,5 +1,6 @@
 import { arrJob, arrRim } from "DB/data";
 import { useState } from "react";
+import { createUsers } from "API/api";
 
 const Form = () => {
 const [userName, setUserName] = useState('');
@@ -8,19 +9,36 @@ const [selectedRim, setSelectedRim] = useState('Власна оправа 0');
 const [lenses, setLenses] = useState('');
 const [od, setOd] = useState('');
 const [os, setOs] = useState('');
+const [comment, setComment] = useState('');
+const [selectedJob, setSelectedJob] = useState('');
+const [ton, setTon] = useState(false);
+const [varn, setVarn] = useState(false);
 
-function onSubmit(e) {
+
+const onSubmit = async (e) => {
     e.preventDefault();
-    console.log({ 
-        user: userName, 
-        number: userNumber, 
-        userRim: selectedRim, 
-        lenses: lenses,
-        od: od,
-        os: os,
 
-    });
-}
+    const data = {
+        userName: userName,
+        number: userNumber,
+        rimPrice: selectedRim,
+        lenses: lenses,
+        lensesOD: od,
+        lensesOS: os,
+        comment: comment,
+        job: selectedJob,
+        ton: ton,
+        urgency: varn,
+        date: new Date().toISOString(), // Додаємо дату створення
+    };
+
+    try {
+        const response = await createUsers(data); // Виклик API
+        console.log("Успішно створено користувача:", response);
+    } catch (error) {
+        console.error("Помилка:", error.message);
+    }
+};
 
     return (
         <form onSubmit={onSubmit}>
@@ -100,11 +118,13 @@ function onSubmit(e) {
                     key={id} 
                     htmlFor={id}
                 >
-                    <input 
-                        key={id} 
+                    <input  
                         id={id} 
+                        name="job"
                         type="radio" 
                         value={price}
+                        checked={selectedJob === price}
+                        onChange={(e) => setSelectedJob(e.target.value)}
                     />{text}
                 </label>) }
             </fieldset>
@@ -115,6 +135,8 @@ function onSubmit(e) {
                         type="checkbox" 
                         name="ton" 
                         value="250"
+                        checked={ton}
+                        onChange={(e) => setTon(e.target.checked)}
                     /> Тонування
                 </label>
 
@@ -123,13 +145,19 @@ function onSubmit(e) {
                     type="checkbox"
                     name="urgency" 
                     value="orange"
+                    checked={varn}
+                    onChange={(e) => setVarn(e.target.checked)}
                 /> Терміновість
                 </label>
             </fieldset>
 
             <label>
                 Коментар
-                <textarea placeholder="коментар"></textarea>
+                <textarea 
+                    placeholder="коментар"
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                ></textarea>
             </label>
 
             <button type="submit">Створити</button>
