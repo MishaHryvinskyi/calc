@@ -89,6 +89,8 @@ function onSubmit(e) {
                 <input 
                     type="number" 
                     placeholder="ціна-OS"
+                    value={os}
+                    onChange={(e) => setOs(e.target.value)}
                 />
             </label>
             
