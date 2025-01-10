@@ -1,3 +1,5 @@
+import { Td } from "./Tbody.styled";
+
 const Tbody = ({ users }) => {
 
     return (
@@ -22,19 +24,19 @@ const Tbody = ({ users }) => {
     
               return (
                 <tr key={id}>
-                  <td>{id}</td>
-                  <td>{userName}</td>
-                  <td>{number}</td>
-                  <td>{lenses}</td>
-                  <td>{separiteValue[0]}</td>
-                  <td>{separiteValue[1] || 0} грн</td>
-                  <td>{lensesOD || 0} грн</td>
-                  <td>{lensesOS || 0} грн</td>
-                  <td>{job || 0} грн</td>
-                  <td>{ton || 0} грн</td>
-                  <td>{comment || " "}</td>
-                  <td>{totalPrice} грн</td>
-                  <td>{date}</td>
+                  <Td>{id}</Td>
+                  <Td>{userName}</Td>
+                  <Td>{number}</Td>
+                  <Td>{lenses}</Td>
+                  <Td>{separiteValue[0]}</Td>
+                  <Td>{separiteValue[1] || 0} грн</Td>
+                  <Td>{lensesOD || 0} грн</Td>
+                  <Td>{lensesOS || 0} грн</Td>
+                  <Td>{job || 0} грн</Td>
+                  <Td>{ton || 0} грн</Td>
+                  <Td>{comment || " "}</Td>
+                  <Td>{totalPrice} грн</Td>
+                  <Td>{date}</Td>
                 </tr>
               );
             }

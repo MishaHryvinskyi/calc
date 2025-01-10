@@ -1,6 +1,7 @@
 import { getUsers } from "API/api";
 import { useEffect, useState } from "react";
 
+import Form from "./Form/Form";
 import Table from "./Table/Table";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
 
   return (
     <div>
+      <Form />
       <h1>Список користувачів</h1>
       <Table users={users} />
     </div>

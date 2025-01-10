@@ -1,27 +1,27 @@
 import Tbody from "../Tbody/Tbody";
-
+import { Th, Thead, TableStyled } from "./Table.styled";
 const Table = ({ users }) => {
     return (
-        <table>
-        <thead>
+        <TableStyled>
+        <Thead>
             <tr>
-              <th>№</th>
-              <th>Замовник</th>
-              <th>Телефон</th>
-              <th>Виробник лiнзи</th>
-              <th>Назва оправи</th>
-              <th>Ціна оправи</th>
-              <th>Ціна OD</th>
-              <th>Ціна OS</th>
-              <th>Робота техніка</th>
-              <th>Тонування</th>
-              <th>Коментар</th>
-              <th>Загальна вартість</th>
-              <th>Створено</th>
+              <Th>№</Th>
+              <Th>Замовник</Th>
+              <Th>Телефон</Th>
+              <Th>Виробник лiнзи</Th>
+              <Th>Назва оправи</Th>
+              <Th>Ціна оправи</Th>
+              <Th>Ціна OD</Th>
+              <Th>Ціна OS</Th>
+              <Th>Робота техніка</Th>
+              <Th>Тонування</Th>
+              <Th>Коментар</Th>
+              <Th>Загальна вартість</Th>
+              <Th>Створено</Th>
             </tr>
-        </thead>
+        </Thead>
         <Tbody users={users}/>
-      </table>
+      </TableStyled>
     );
 }
 
