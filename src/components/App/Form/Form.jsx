@@ -1,6 +1,17 @@
 import { arrJob, arrRim } from "DB/data";
 import { useState } from "react";
 import { createUsers } from "API/api";
+import { 
+    FormStyled,
+    InputStyled, 
+    LabelStyled,
+    TextAreaStyled,
+    FieldsetStyled,
+    FilesedRadio,
+    InputRadio,
+    FilesedCheckBox,
+    BtnStyled
+ } from "./Form.styled";
 
 const Form = () => {
 const [userName, setUserName] = useState('');
@@ -29,11 +40,12 @@ const onSubmit = async (e) => {
         job: selectedJob,
         ton: ton,
         urgency: varn,
-        date: new Date().toISOString(), // Додаємо дату створення
+        date: new Date().toISOString(), 
     };
+    console.log(data)
 
     try {
-        const response = await createUsers(data); // Виклик API
+        const response = await createUsers(data); 
         console.log("Успішно створено користувача:", response);
     } catch (error) {
         console.error("Помилка:", error.message);
@@ -41,10 +53,10 @@ const onSubmit = async (e) => {
 };
 
     return (
-        <form onSubmit={onSubmit}>
-            <label>
+        <FormStyled onSubmit={onSubmit}>
+            <LabelStyled>
             Замовник
-                <input 
+                <InputStyled 
                     required 
                     name="userName" 
                     type="text" 
@@ -52,10 +64,11 @@ const onSubmit = async (e) => {
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
                 />
-            </label>
-            <label>
+            </LabelStyled>
+            
+            <LabelStyled>
                 Номер телефону
-                <input 
+                <InputStyled 
                     required 
                     name="number"
                     type="tel" 
@@ -64,12 +77,12 @@ const onSubmit = async (e) => {
                     onChange={(e) => setUserNumber(e.target.value)}
                     pattern="\d{10}" 
                 />
-            </label>
+            </LabelStyled>
             
-            <fieldset>
+            <FieldsetStyled>
                 <legend>Оправи</legend>
                 <select 
-                    value={selectedRim} 
+                    value={selectedRim || "Власна-оправа 0"} 
                     onChange={(e) => setSelectedRim(e.target.value)}
                 >
                     {arrRim.map((item) => (
@@ -78,65 +91,68 @@ const onSubmit = async (e) => {
                         </option>
                     ))}
                 </select>
-            </fieldset>
+            </FieldsetStyled>
 
-            <label>
+            <LabelStyled>
                 Лінзи
-                <input 
+                <InputStyled 
                     value={lenses}
                     name="lenses" 
                     type="text" 
                     placeholder="Виробник і специфікація"
                     onChange={(e) => setLenses(e.target.value)}
                 />
-            </label>
+            </LabelStyled>
 
-            <label>
+            <LabelStyled>
                 OD
-                <input 
+                <InputStyled 
                     type="number" 
                     placeholder="ціна-OD"
                     name="OD"
                     value={od}
                     onChange={(e) => setOd(e.target.value)}
                 />
-            </label>
+            </LabelStyled>
 
-            <label>
+            <LabelStyled>
                 OS
-                <input 
+                <InputStyled 
                     type="number" 
                     placeholder="ціна-OS"
                     value={os}
                     onChange={(e) => setOs(e.target.value)}
                 />
-            </label>
+            </LabelStyled>
             
-            <fieldset>
+            <FilesedRadio>
+                <legend>Оплата роботи</legend>
                 { arrJob.map(({ id, price, text }) => 
                 <label 
                     key={id} 
                     htmlFor={id}
                 >
-                    <input  
+                    <InputRadio  
                         id={id} 
                         name="job"
                         type="radio" 
                         value={price}
                         checked={selectedJob === price}
                         onChange={(e) => setSelectedJob(e.target.value)}
-                    />{text}
+                    />
+                    {text}
                 </label>) }
-            </fieldset>
+            </FilesedRadio>
             
-            <fieldset>
+            <FilesedCheckBox>
+                <legend>Додаткові опції</legend>
                 <label>
                     <input 
                         type="checkbox" 
                         name="ton" 
                         value="250"
                         checked={ton}
-                        onChange={(e) => setTon(e.target.checked)}
+                        onChange={(e) => setTon(e.target.value)}
                     /> Тонування
                 </label>
 
@@ -149,19 +165,19 @@ const onSubmit = async (e) => {
                     onChange={(e) => setVarn(e.target.checked)}
                 /> Терміновість
                 </label>
-            </fieldset>
+            </FilesedCheckBox>
 
-            <label>
+            <LabelStyled>
                 Коментар
-                <textarea 
+                <TextAreaStyled 
                     placeholder="коментар"
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
-                ></textarea>
-            </label>
+                ></TextAreaStyled>
+            </LabelStyled>
 
-            <button type="submit">Створити</button>
-        </form>
+            <BtnStyled type="submit">Створити</BtnStyled>
+        </FormStyled>
     )
 };
 

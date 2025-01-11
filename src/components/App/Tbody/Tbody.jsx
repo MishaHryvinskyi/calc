@@ -10,7 +10,7 @@ const Tbody = ({ users }) => {
               userName,
               number,
               lenses,
-              rimPrice = "0 грн",
+              rimPrice,
               lensesOD = 0,
               lensesOS = 0,
               job = 0,
@@ -29,7 +29,7 @@ const Tbody = ({ users }) => {
                   <Td>{number}</Td>
                   <Td>{lenses}</Td>
                   <Td>{separiteValue[0]}</Td>
-                  <Td>{separiteValue[1] || 0} грн</Td>
+                  <Td>{separiteValue[1]} грн</Td>
                   <Td>{lensesOD || 0} грн</Td>
                   <Td>{lensesOS || 0} грн</Td>
                   <Td>{job || 0} грн</Td>
