@@ -1,33 +1,20 @@
-import { getUsers } from "API/api";
-import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import Form from "./Form/Form";
-import Table from "./Table/Table";
+import Layout from "../Layout/Layout";
+import Home from "pages/Home";
+import Order from "pages/Order";
+import Orders from "pages/Orders";
 
 const App = () => {
 
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const data = await getUsers(); // Виклик API для отримання даних
-        setUsers(data); // Оновлюємо стан
-      } catch (error) {
-        console.error("Помилка завантаження користувачів:", error); // Лог помилок
-      }
-    };
-
-    fetchUsers();
-  }, [])
-
-
   return (
-    <div>
-      <Form />
-      <h1>Список користувачів</h1>
-      <Table users={users} />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+        <Route path="/order" element={<Order/>}/>
+        <Route path="/orders" element={<Orders/>}/>
+      </Route>
+    </Routes>
   );
 }
 

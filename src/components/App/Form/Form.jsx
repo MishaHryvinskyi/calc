@@ -25,7 +25,6 @@ const [selectedJob, setSelectedJob] = useState('');
 const [ton, setTon] = useState(false);
 const [varn, setVarn] = useState(false);
 
-
 const onSubmit = async (e) => {
     e.preventDefault();
 
