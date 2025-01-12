@@ -65,4 +65,13 @@ export const days = [
     "Четвер",
     "П'ятниця",
     "Субота",
+];
+
+export const lensesItali = [
+    { index: 1.49, price: 100 },
+    { index: 1.56, price: 100 },
+    { index: 1.60, price: 100 },
+    { index: 1.67, price: 100 },
+    { index: 'ФХС', price: 100 },
+    { index: 'Біфокал', price: 100 },
 ]

@@ -1,5 +1,6 @@
-import Table from "components/App/Table/Table";
+import Table from "components/Table/Table";
 import { getUsers } from "API/api";
+import Title from "components/Title/Title";
 import { useEffect, useState } from "react";
 
 
@@ -22,7 +23,7 @@ const Orders = () => {
 
     return (
         <>
-            <h1>Список користувачів</h1>
+            <Title text={'Список користувачів'}/>
             <Table users={users}/>
         </>
     );

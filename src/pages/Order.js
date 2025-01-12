@@ -1,4 +1,4 @@
-import Form from "components/App/Form/Form";
+import Form from "components/Form/Form";
 
 const Order = () => {
     return(

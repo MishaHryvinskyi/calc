@@ -1,33 +1,27 @@
-import { arrJob, arrRim } from "DB/data";
 import { useState } from "react";
 import { createUsers } from "API/api";
+import RadioBtnJob from "components/RadioBtnJob/RaidoBtnJob";
+import CheckBox from "components/CheckBox/CheckBox";
+import SelectRim from "components/SelectRim/SelectRim";
 import { 
     FormStyled,
     InputStyled, 
     LabelStyled,
     TextAreaStyled,
-    FieldsetStyled,
-    FilesedRadio,
-    InputRadio,
-    FilesedCheckBox,
     BtnStyled
  } from "./Form.styled";
  import { 
     FaUser,
     FaPhoneAlt,
-    FaGlasses,
     FaCommentDots,
-    FaMoneyBillWave
  } from "react-icons/fa";
  import { GiSpectacleLenses } from "react-icons/gi";
- import { TbUrgent } from "react-icons/tb";
- import { IoGlasses } from "react-icons/io5";
  import { toast, ToastContainer } from "react-toastify";
 
 const Form = () => {
 const [userName, setUserName] = useState('');
 const [userNumber, setUserNumber] = useState('');
-const [selectedRim, setSelectedRim] = useState('Власна оправа 0');
+const [selectedRim, setSelectedRim] = useState('default');
 const [lenses, setLenses] = useState('');
 const [od, setOd] = useState('');
 const [os, setOs] = useState('');
@@ -35,6 +29,11 @@ const [comment, setComment] = useState('');
 const [selectedJob, setSelectedJob] = useState('');
 const [ton, setTon] = useState(false);
 const [varn, setVarn] = useState(false);
+
+const radioCheck = (e) => setSelectedJob(e.target.value);
+const checkTon = (e) => setTon(e.target.value);
+const checkVarn = (e) => setVarn(e.target.checked);
+const checkRim = (e) => setSelectedRim(e.target.value);
 
 const onSubmit = async (e) => {
     e.preventDefault();
@@ -99,20 +98,8 @@ const onSubmit = async (e) => {
                 />
             </LabelStyled>
             
-            <FieldsetStyled>
-                <legend><FaGlasses /> Оправи</legend>
-                <select 
-                    value={selectedRim || "Власна-оправа 0"} 
-                    onChange={(e) => setSelectedRim(e.target.value)}
-                >
-                    {arrRim.map((item) => (
-                        <option key={item} value={item}>
-                            {item} грн
-                        </option>
-                    ))}
-                </select>
-            </FieldsetStyled>
-
+            <SelectRim checkRim={checkRim} selectedRim={selectedRim}/>
+            
             <LabelStyled>
                 <GiSpectacleLenses/>Лінзи
                 <InputStyled 
@@ -123,6 +110,22 @@ const onSubmit = async (e) => {
                     onChange={(e) => setLenses(e.target.value)}
                 />
             </LabelStyled>
+            {/* <fieldset>
+                <legend>Індекс лінз</legend>
+                <select>
+        
+                <optgroup label="Італія">
+                {lensesItali.map(({ index, price }) => (
+                        <option key={index} value={`${index} ${price}`}>{`${index} ${price} грн` }</option>
+                    ))}
+                </optgroup>
+                <optgroup label="Литва">
+                {lensesItali.map(({ index, price }) => (
+                        <option key={index} value={`${index} ${price}`}>{`${index} ${price} грн` }</option>
+                    ))}
+                </optgroup>
+                </select>
+            </fieldset> */}
 
             <LabelStyled>
                 OD
@@ -145,48 +148,18 @@ const onSubmit = async (e) => {
                 />
             </LabelStyled>
             
-            <FilesedRadio>
-                <legend><FaMoneyBillWave />Оплата роботи</legend>
-                { arrJob.map(({ id, price, text }) => 
-                <label 
-                    key={id} 
-                    htmlFor={id}
-                >
-                    <InputRadio  
-                        id={id} 
-                        name="job"
-                        type="radio" 
-                        value={price}
-                        checked={selectedJob === price}
-                        onChange={(e) => setSelectedJob(e.target.value)}
-                    />
-                    {text}
-                </label>) }
-            </FilesedRadio>
-            <ToastContainer />
-            <FilesedCheckBox>
-                <legend>Додаткові опції</legend>
-                <label>
-                    <input 
-                        type="checkbox" 
-                        name="ton" 
-                        value="250"
-                        checked={ton}
-                        onChange={(e) => setTon(e.target.value)}
-                    /> Тонування <IoGlasses/>
-                </label>
+            <RadioBtnJob 
+                selectedJob={selectedJob}
+                radioCheck={radioCheck}
+            />
 
-                <label>
-                <input 
-                    type="checkbox"
-                    name="urgency" 
-                    value="orange"
-                    checked={varn}
-                    onChange={(e) => setVarn(e.target.checked)}
-                /> Терміновість <TbUrgent/>
-                </label>
-            </FilesedCheckBox>
-
+            <CheckBox 
+                checkTon={checkTon} 
+                ton={ton}
+                checkVarn={checkVarn}
+                varn={varn}
+            />
+            
             <LabelStyled>
             <FaCommentDots />Коментар
                 <TextAreaStyled 
@@ -197,6 +170,7 @@ const onSubmit = async (e) => {
             </LabelStyled>
 
             <BtnStyled type="submit">Створити</BtnStyled>
+            <ToastContainer />
         </FormStyled>
     )
 };

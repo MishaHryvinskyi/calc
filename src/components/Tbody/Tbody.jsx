@@ -1,5 +1,5 @@
 import { Td } from "./Tbody.styled";
-import { Loader } from "components/Loader/Loader";
+import Loader from "components/Loader/Loader";
 
 const Tbody = ({ users }) => {
   if (!users || users.length === 0) {

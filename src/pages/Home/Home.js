@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Weather from "components/Weather/Weather";
 import { Clock, CurrentDay } from "./Home.styled";
-import { Weather } from "components/Weather/Weather";
 import { days } from "DB/data";
 
 const Home = () => {

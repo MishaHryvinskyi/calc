@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getWeather } from "API/api";
 import { WeatherContainer, IconWrap } from "./Weather.styled";
-import { Loader } from "components/Loader/Loader";
+import Loader from "components/Loader/Loader";
 
 const Weather = () => {
 const [wether, setWether] = useState(null);
@@ -43,4 +43,4 @@ useEffect(() => {
     )
 }
 
-export { Weather }
+export default Weather;
