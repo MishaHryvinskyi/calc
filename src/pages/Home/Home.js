@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Clock, CurrentDay } from "./Home.styled";
 import { Weather } from "components/Weather/Weather";
+import { days } from "DB/data";
 
 const Home = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -15,6 +16,7 @@ const Home = () => {
         return () => clearInterval(timer);
     }, []);
 
+    const day = days[currentTime.getDay()]
     const month = (currentTime.getMonth() + 1).toString().padStart(2, "0");
     const date = currentTime.getDate();
     const year = currentTime.getFullYear();
@@ -25,7 +27,7 @@ const Home = () => {
     
     return (
         <>
-            <CurrentDay>Поточна дата: {`${date}.${month}.${year}`}</CurrentDay>
+            <CurrentDay>Поточна дата: {`${day} ${date}.${month}.${year}`}</CurrentDay>
             <Clock>Час: {`${hours}:${minutes}:${seconds}`}</Clock>
             <Weather />
         </>

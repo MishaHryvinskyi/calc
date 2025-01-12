@@ -12,6 +12,17 @@ import {
     FilesedCheckBox,
     BtnStyled
  } from "./Form.styled";
+ import { 
+    FaUser,
+    FaPhoneAlt,
+    FaGlasses,
+    FaCommentDots,
+    FaMoneyBillWave
+ } from "react-icons/fa";
+ import { GiSpectacleLenses } from "react-icons/gi";
+ import { TbUrgent } from "react-icons/tb";
+ import { IoGlasses } from "react-icons/io5";
+ import { toast, ToastContainer } from "react-toastify";
 
 const Form = () => {
 const [userName, setUserName] = useState('');
@@ -41,20 +52,30 @@ const onSubmit = async (e) => {
         urgency: varn,
         date: new Date().toISOString(), 
     };
+
     console.log(data)
 
     try {
+        if (!selectedJob) {
+            toast.warning('Виберіть оплату роботи');
+            return;
+        }
         const response = await createUsers(data); 
         console.log("Успішно створено користувача:", response);
     } catch (error) {
         console.error("Помилка:", error.message);
+    }
+
+    if (data) {
+        toast.success(`Замовлення ${data.userName} успішно створено`);
+        return;
     }
 };
 
     return (
         <FormStyled onSubmit={onSubmit}>
             <LabelStyled>
-            Замовник
+            <FaUser/> Замовник
                 <InputStyled 
                     required 
                     name="userName" 
@@ -66,7 +87,7 @@ const onSubmit = async (e) => {
             </LabelStyled>
             
             <LabelStyled>
-                Номер телефону
+            <FaPhoneAlt /> Номер телефону
                 <InputStyled 
                     required 
                     name="number"
@@ -79,7 +100,7 @@ const onSubmit = async (e) => {
             </LabelStyled>
             
             <FieldsetStyled>
-                <legend>Оправи</legend>
+                <legend><FaGlasses /> Оправи</legend>
                 <select 
                     value={selectedRim || "Власна-оправа 0"} 
                     onChange={(e) => setSelectedRim(e.target.value)}
@@ -93,7 +114,7 @@ const onSubmit = async (e) => {
             </FieldsetStyled>
 
             <LabelStyled>
-                Лінзи
+                <GiSpectacleLenses/>Лінзи
                 <InputStyled 
                     value={lenses}
                     name="lenses" 
@@ -125,7 +146,7 @@ const onSubmit = async (e) => {
             </LabelStyled>
             
             <FilesedRadio>
-                <legend>Оплата роботи</legend>
+                <legend><FaMoneyBillWave />Оплата роботи</legend>
                 { arrJob.map(({ id, price, text }) => 
                 <label 
                     key={id} 
@@ -142,7 +163,7 @@ const onSubmit = async (e) => {
                     {text}
                 </label>) }
             </FilesedRadio>
-            
+            <ToastContainer />
             <FilesedCheckBox>
                 <legend>Додаткові опції</legend>
                 <label>
@@ -152,7 +173,7 @@ const onSubmit = async (e) => {
                         value="250"
                         checked={ton}
                         onChange={(e) => setTon(e.target.value)}
-                    /> Тонування
+                    /> Тонування <IoGlasses/>
                 </label>
 
                 <label>
@@ -162,12 +183,12 @@ const onSubmit = async (e) => {
                     value="orange"
                     checked={varn}
                     onChange={(e) => setVarn(e.target.checked)}
-                /> Терміновість
+                /> Терміновість <TbUrgent/>
                 </label>
             </FilesedCheckBox>
 
             <LabelStyled>
-                Коментар
+            <FaCommentDots />Коментар
                 <TextAreaStyled 
                     placeholder="коментар"
                     value={comment}

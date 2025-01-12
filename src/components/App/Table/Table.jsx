@@ -1,6 +1,6 @@
 import Tbody from "../Tbody/Tbody";
 import { Th, Thead, TableStyled } from "./Table.styled";
-const Table = ({ users }) => {
+const Table = ({ users, loading }) => {
     return (
         <TableStyled>
         <Thead>
@@ -20,7 +20,7 @@ const Table = ({ users }) => {
               <Th>Створено</Th>
             </tr>
         </Thead>
-        <Tbody users={users}/>
+        <Tbody users={users} loading={loading}/>
       </TableStyled>
     );
 }

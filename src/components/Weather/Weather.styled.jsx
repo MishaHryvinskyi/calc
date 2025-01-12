@@ -6,6 +6,7 @@ export const WeatherContainer = styled.div`
     font-size: 36px;
     font-weight: 800;
     align-items: center;
+    color:rgb(53, 154, 108);
 `;
 
 export const IconWrap = styled.div`

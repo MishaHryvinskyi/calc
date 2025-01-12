@@ -14,9 +14,9 @@ const Header = styled.header`
 const StyledLink = styled(NavLink)`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
-  width: 240px;
+  width: 200px;
   font-size: 24px;
   font-weight: 700;
   padding: 15px;

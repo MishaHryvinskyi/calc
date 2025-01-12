@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getWeather } from "API/api";
 import { WeatherContainer, IconWrap } from "./Weather.styled";
+import { Loader } from "components/Loader/Loader";
 
 const Weather = () => {
 const [wether, setWether] = useState(null);
@@ -35,7 +36,7 @@ useEffect(() => {
             </WeatherContainer>
         ) : (
             <WeatherContainer>
-                "Завантаження погоди..."
+                <Loader/>
             </WeatherContainer>
         )}
     </div>
