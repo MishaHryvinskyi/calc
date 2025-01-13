@@ -4,16 +4,10 @@ import RadioBtnJob from "components/RadioBtnJob/RaidoBtnJob";
 import CheckBox from "components/CheckBox/CheckBox";
 import SelectRim from "components/SelectRim/SelectRim";
 import Input from "components/Input/Input";
-import { 
-    FormStyled,
-    InputStyled, 
-    LabelStyled,
-    TextAreaStyled,
-    BtnStyled
- } from "./Form.styled";
- import { FaCommentDots } from "react-icons/fa";
- import { GiSpectacleLenses } from "react-icons/gi";
- import { toast, ToastContainer } from "react-toastify";
+import { FormStyled, InputStyled, LabelStyled, TextAreaStyled, BtnStyled } from "./Form.styled";
+import { FaCommentDots } from "react-icons/fa";
+import { GiSpectacleLenses } from "react-icons/gi";
+import { toast, ToastContainer } from "react-toastify";
 
 const Form = () => {
 const [userName, setUserName] = useState('');
@@ -79,8 +73,6 @@ const onSubmit = async (e) => {
         urgency: varn,
         date: new Date().toISOString(), 
     };
-
-    console.log(data)
 
     try {
         if (!selectedJob) {
@@ -154,10 +146,7 @@ const onSubmit = async (e) => {
                 />
             </LabelStyled>
             
-            <RadioBtnJob 
-                selectedJob={selectedJob}
-                radioCheck={handleClick}
-            />
+            <RadioBtnJob  selectedJob={selectedJob} radioCheck={handleClick} />
 
             <CheckBox 
                 checkTon={handleClick} 
