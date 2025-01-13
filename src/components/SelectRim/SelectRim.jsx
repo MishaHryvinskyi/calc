@@ -9,6 +9,7 @@ const SelectRim = ({ checkRim, selectedRim }) => {
                 <select 
                     value={selectedRim} 
                     onChange={checkRim}
+                    name="rim"
                 >
                     <option value='default' disabled>Виберіть оправу</option>
                         {arrRim.map((item) => (
