@@ -2,12 +2,11 @@ import { Td } from "./Tbody.styled";
 import Loader from "components/Loader/Loader";
 
 const Tbody = ({ users }) => {
+  
   if (!users || users.length === 0) {
     // Якщо users ще не завантажені або порожні
     return (
-      <tbody>
-        <Loader />
-      </tbody>
+      <tbody><tr><td><Loader /></td></tr></tbody>
     );
   }
 

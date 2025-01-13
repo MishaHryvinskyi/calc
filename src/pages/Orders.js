@@ -22,10 +22,10 @@ const Orders = () => {
   }, [])
 
     return (
-        <>
-            <Title text={'Список користувачів'}/>
-            <Table users={users}/>
-        </>
+      <>
+          <Title text={'Список користувачів'}/>
+          <Table users={users}/>
+      </>
     );
 }
 

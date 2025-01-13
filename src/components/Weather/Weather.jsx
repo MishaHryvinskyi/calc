@@ -17,13 +17,13 @@ useEffect(() => {
         .catch(error => {
             console.error("Failed to fetch weather:", error);
         });
-}, []);
+}, [wether]);
     return (
         <div>
-        {wether ? (
+            {(wether) ? (
             <WeatherContainer>
                 <p>Погода в місті: {wether?.location?.name}</p>
-                <p>Температура: {wether?.current?.feelslike_c} °C</p>
+                <p>Температура: {wether?.current?.temp_c} °C</p>
                 <IconWrap>
                     <p>{wether?.current?.condition?.text}</p>
                     <img
