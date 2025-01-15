@@ -1,4 +1,4 @@
-import { FieldsetStyled } from "components/Form/Form.styled";
+import { FieldsetStyled } from "components/FormElelment/Form/Form.styled";
 import { FaGlasses } from "react-icons/fa";
 import { arrRim } from "DB/data";
 

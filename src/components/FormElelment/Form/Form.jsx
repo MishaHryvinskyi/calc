@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { createUsers } from "API/api";
-import RadioBtnJob from "components/RadioBtnJob/RaidoBtnJob";
-import CheckBox from "components/CheckBox/CheckBox";
-import SelectRim from "components/SelectRim/SelectRim";
-import Input from "components/Input/Input";
+import RadioBtnJob from "components/FormElelment/RadioBtnJob/RaidoBtnJob";
+import CheckBox from "components/FormElelment/CheckBox/CheckBox";
+import SelectRim from "components/FormElelment/SelectRim/SelectRim";
+import Input from "components/FormElelment/Input/Input";
 import { FormStyled, InputStyled, LabelStyled, TextAreaStyled, BtnStyled } from "./Form.styled";
 import { FaCommentDots } from "react-icons/fa";
 import { GiSpectacleLenses } from "react-icons/gi";

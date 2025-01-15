@@ -1,4 +1,4 @@
-import { InputStyled, LabelStyled } from "components/Form/Form.styled";
+import { InputStyled, LabelStyled } from "components/FormElelment/Form/Form.styled";
 
 const Input = ({ 
     handleClick,

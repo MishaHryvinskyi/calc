@@ -1,4 +1,4 @@
-import Table from "components/Table/Table";
+import Table from "components/TableElement/Table/Table";
 import { getUsers } from "API/api";
 import Title from "components/Title/Title";
 import { useEffect, useState } from "react";
