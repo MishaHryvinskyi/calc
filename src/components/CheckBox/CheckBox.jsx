@@ -1,4 +1,4 @@
-import { FilesedCheckBox } from "components/Form/Form.styled"
+import { FilesedCheckBox } from "./CheckBox.styled";
 import { IoGlasses } from "react-icons/io5";
 import { TbUrgent } from "react-icons/tb";
 

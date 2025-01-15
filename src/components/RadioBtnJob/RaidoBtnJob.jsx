@@ -1,4 +1,4 @@
-import { FilesedRadio, InputRadio, } from "components/Form/Form.styled"
+import { FilesedRadio, InputRadio } from './RadioBtnJob.styled.jsx';
 import { arrJob } from "DB/data";
 
 const RadioBtnJob = ({ radioCheck, selectedJob }) => {
