@@ -8,14 +8,15 @@ import { FormStyled, InputStyled, LabelStyled, TextAreaStyled, BtnStyled } from 
 import { FaCommentDots } from "react-icons/fa";
 import { GiSpectacleLenses } from "react-icons/gi";
 import { toast, ToastContainer } from "react-toastify";
+import LensesSelected from "../LensesSelected/LensesSelected";
 
 const Form = () => {
 const [userName, setUserName] = useState('');
 const [userNumber, setUserNumber] = useState('');
 const [selectedRim, setSelectedRim] = useState('default');
 const [lenses, setLenses] = useState('');
-const [od, setOd] = useState('');
-const [os, setOs] = useState('');
+// const [od, setOd] = useState('');
+// const [os, setOs] = useState('');
 const [comment, setComment] = useState('');
 const [selectedJob, setSelectedJob] = useState('');
 const [ton, setTon] = useState(false);
@@ -30,6 +31,10 @@ const handleClick = (e) => {
 
         case "number" :
         setUserNumber(e.target.value);
+        break;
+
+        case "lenses" :
+        setLenses(e.target.value);
         break;
 
         case "job" :
@@ -65,8 +70,8 @@ const onSubmit = async (e) => {
         number: userNumber,
         rimPrice: selectedRim,
         lenses: lenses,
-        lensesOD: od,
-        lensesOS: os,
+        // lensesOD: od,
+        // lensesOS: os,
         comment: comment,
         job: selectedJob,
         ton: ton,
@@ -114,7 +119,9 @@ const onSubmit = async (e) => {
             
             <SelectRim checkRim={handleClick} selectedRim={selectedRim}/>
             
-            <LabelStyled>
+            <LensesSelected checkLens={handleClick} lenses={lenses}/>
+            
+            {/* <LabelStyled>
                 <GiSpectacleLenses/>Лінзи
                 <InputStyled 
                     value={lenses}
@@ -144,8 +151,8 @@ const onSubmit = async (e) => {
                     value={os}
                     onChange={(e) => setOs(e.target.value)}
                 />
-            </LabelStyled>
-            
+            </LabelStyled> */}
+
             <RadioBtnJob  selectedJob={selectedJob} radioCheck={handleClick} />
 
             <CheckBox 

@@ -19,31 +19,29 @@ const Tbody = ({ users }) => {
           number,
           lenses,
           rimPrice,
-          lensesOD = 0,
-          lensesOS = 0,
-          job = 0,
+          job,
           ton = 0,
           comment,
           date,
         }) => {
+          const lensesPow = Number(lenses) + Number(lenses);
           const separiteValue = rimPrice.split(" ");
           const totalPrice =
             Number(separiteValue[1] || 0) +
-            Number(lensesOD) +
-            Number(lensesOS) +
+            Number(lensesPow) +
             Number(job) +
             Number(ton);
+            console.log("ціна за штуку",lenses)
+            console.log(lensesPow);
 
           return (
             <tr key={id}>
               <Td>{id}</Td>
               <Td>{userName}</Td>
               <Td>{number}</Td>
-              <Td>{lenses}</Td>
               <Td>{separiteValue[0]}</Td>
               <Td>{separiteValue[1]} грн</Td>
-              <Td>{lensesOD || 0} грн</Td>
-              <Td>{lensesOS || 0} грн</Td>
+              <Td>{lenses} грн/шт</Td>
               <Td>{job || 0} грн</Td>
               <Td>{ton || 0} грн</Td>
               <Td>{comment || " "}</Td>
