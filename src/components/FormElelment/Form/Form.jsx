@@ -4,9 +4,8 @@ import RadioBtnJob from "components/FormElelment/RadioBtnJob/RaidoBtnJob";
 import CheckBox from "components/FormElelment/CheckBox/CheckBox";
 import SelectRim from "components/FormElelment/SelectRim/SelectRim";
 import Input from "components/FormElelment/Input/Input";
-import { FormStyled, InputStyled, LabelStyled, TextAreaStyled, BtnStyled } from "./Form.styled";
+import { FormStyled, LabelStyled, TextAreaStyled, BtnStyled } from "./Form.styled";
 import { FaCommentDots } from "react-icons/fa";
-import { GiSpectacleLenses } from "react-icons/gi";
 import { toast, ToastContainer } from "react-toastify";
 import LensesSelected from "../LensesSelected/LensesSelected";
 
