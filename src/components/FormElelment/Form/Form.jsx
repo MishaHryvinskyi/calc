@@ -1,21 +1,19 @@
 import { useState } from "react";
 import { createUsers } from "API/api";
+import Input from "components/FormElelment/Input/Input";
+import SelectRim from "components/FormElelment/SelectRim/SelectRim";
+import LensesSelected from "../LensesSelected/LensesSelected";
 import RadioBtnJob from "components/FormElelment/RadioBtnJob/RaidoBtnJob";
 import CheckBox from "components/FormElelment/CheckBox/CheckBox";
-import SelectRim from "components/FormElelment/SelectRim/SelectRim";
-import Input from "components/FormElelment/Input/Input";
 import { FormStyled, LabelStyled, TextAreaStyled, BtnStyled } from "./Form.styled";
 import { FaCommentDots } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
-import LensesSelected from "../LensesSelected/LensesSelected";
 
 const Form = () => {
 const [userName, setUserName] = useState('');
 const [userNumber, setUserNumber] = useState('');
 const [selectedRim, setSelectedRim] = useState('default');
 const [lenses, setLenses] = useState('');
-// const [od, setOd] = useState('');
-// const [os, setOs] = useState('');
 const [comment, setComment] = useState('');
 const [selectedJob, setSelectedJob] = useState('');
 const [ton, setTon] = useState(false);
@@ -69,8 +67,6 @@ const onSubmit = async (e) => {
         number: userNumber,
         rimPrice: selectedRim,
         lenses: lenses,
-        // lensesOD: od,
-        // lensesOS: os,
         comment: comment,
         job: selectedJob,
         ton: ton,
@@ -119,38 +115,6 @@ const onSubmit = async (e) => {
             <SelectRim checkRim={handleClick} selectedRim={selectedRim}/>
             
             <LensesSelected checkLens={handleClick} lenses={lenses}/>
-            
-            {/* <LabelStyled>
-                <GiSpectacleLenses/>Лінзи
-                <InputStyled 
-                    value={lenses}
-                    name="lenses" 
-                    type="text" 
-                    placeholder="Виробник і специфікація"
-                    onChange={(e) => setLenses(e.target.value)}
-                />
-            </LabelStyled>
-
-            <LabelStyled>
-                OD
-                <InputStyled 
-                    type="number" 
-                    placeholder="ціна-OD"
-                    name="OD"
-                    value={od}
-                    onChange={(e) => setOd(e.target.value)}
-                />
-            </LabelStyled>
-
-            <LabelStyled>
-                OS
-                <InputStyled 
-                    type="number" 
-                    placeholder="ціна-OS"
-                    value={os}
-                    onChange={(e) => setOs(e.target.value)}
-                />
-            </LabelStyled> */}
 
             <RadioBtnJob  selectedJob={selectedJob} radioCheck={handleClick} />
 
