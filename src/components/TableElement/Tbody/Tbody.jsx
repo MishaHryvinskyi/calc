@@ -12,6 +12,7 @@ const Tbody = ({ users }) => {
 
   return (
     <tbody>
+      {console.log(users)}
       {users.map(
         ({
           id,
@@ -23,6 +24,7 @@ const Tbody = ({ users }) => {
           ton = 0,
           comment,
           date,
+          urgency
         }) => {
           const lensesPow = Number(lenses) + Number(lenses);
           const separiteValue = rimPrice.split(" ");
@@ -36,17 +38,17 @@ const Tbody = ({ users }) => {
 
           return (
             <tr key={id}>
-              <Td>{id}</Td>
-              <Td>{userName}</Td>
-              <Td>{number}</Td>
-              <Td>{separiteValue[0]}</Td>
-              <Td>{separiteValue[1]} грн</Td>
-              <Td>{lenses} грн/шт</Td>
-              <Td>{job || 0} грн</Td>
-              <Td>{ton || 0} грн</Td>
-              <Td>{comment || " "}</Td>
-              <Td>{totalPrice} грн</Td>
-              <Td>{date}</Td>
+              <Td iSurgency={urgency}>{id}</Td>
+              <Td iSurgency={urgency}>{userName}</Td>
+              <Td iSurgency={urgency}>{number}</Td>
+              <Td iSurgency={urgency}>{separiteValue[0]}</Td>
+              <Td iSurgency={urgency}>{separiteValue[1]} грн</Td>
+              <Td iSurgency={urgency}>{lenses} грн/шт</Td>
+              <Td iSurgency={urgency}>{job || 0} грн</Td>
+              <Td iSurgency={urgency}>{ton || 0} грн</Td>
+              <Td iSurgency={urgency}>{comment || " "}</Td>
+              <Td iSurgency={urgency}>{totalPrice} грн</Td>
+              <Td iSurgency={urgency}>{date}</Td>
             </tr>
           );
         }
