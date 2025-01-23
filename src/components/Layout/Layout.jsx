@@ -18,6 +18,9 @@ const Layout = () => {
                     <li>
                         <StyledLink to="/orders"><FaListAlt/>Список</StyledLink>
                     </li>
+                    <li>
+                        <StyledLink to="/info"><FaListAlt/>Info</StyledLink>
+                    </li>
                 </List>
             </nav>
         </Header>

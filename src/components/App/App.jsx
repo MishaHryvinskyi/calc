@@ -4,6 +4,7 @@ import Layout from "../Layout/Layout";
 import Home from "pages/Home/Home";
 import Order from "pages/Order";
 import Orders from "pages/Orders";
+import OrdersInfo from "pages/OrdersInfo/OrdersInfo";
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
         <Route index element={<Home/>}/>
         <Route path="/order" element={<Order/>}/>
         <Route path="/orders" element={<Orders/>}/>
+        <Route path="info" element={<OrdersInfo/>}/>
       </Route>
     </Routes>
   );
