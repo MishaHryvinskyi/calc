@@ -116,7 +116,7 @@ const onSubmit = async (e) => {
             
             <LensesSelected checkLens={handleClick} lenses={lenses}/>
 
-            <RadioBtnJob  selectedJob={selectedJob} radioCheck={handleClick} />
+            <RadioBtnJob selectedJob={selectedJob} radioCheck={handleClick} />
 
             <CheckBox 
                 checkTon={handleClick} 
