@@ -5,6 +5,7 @@ import SelectRim from "components/FormElelment/SelectRim/SelectRim";
 import LensesSelected from "../LensesSelected/LensesSelected";
 import RadioBtnJob from "components/FormElelment/RadioBtnJob/RaidoBtnJob";
 import CheckBox from "components/FormElelment/CheckBox/CheckBox";
+import { formatDate } from "utils/formatData";
 import { FormStyled, LabelStyled, TextAreaStyled, BtnStyled } from "./Form.styled";
 import { FaCommentDots } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
@@ -71,7 +72,7 @@ const onSubmit = async (e) => {
         job: selectedJob,
         ton: ton,
         urgency: varn,
-        date: new Date().toISOString(), 
+        date: formatDate(new Date()), 
     };
 
     try {
