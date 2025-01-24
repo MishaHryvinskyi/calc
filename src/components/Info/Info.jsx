@@ -2,7 +2,7 @@ import { Iten, Name, ContainerUser, ContainerInf, UserNumber, TotalPrice, BtnMor
 import { FiChevronDown } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
-const Info = ({ allUser, openId, toggleShow }) => {
+const Info = ({ allUser, openId, toggleShow, remove }) => {
     return(
         <ul>
             {allUser.map(({ 
@@ -33,7 +33,7 @@ const Info = ({ allUser, openId, toggleShow }) => {
                             <Name>Замовник: <span>{userName}</span></Name>
                             <UserNumber>Номер телефону: <span>{number}</span></UserNumber>
                             <TotalPrice>Оплата замовлення: <span>{totalPrice}</span> грн</TotalPrice>
-                            <BtnMore type="button" onClick={() => {console.log(`click ${id}`)}}><MdDelete /></BtnMore>
+                            <BtnMore type="button" onClick={() => {remove(id)}}><MdDelete /></BtnMore>
                             <BtnMore onClick={() => toggleShow(id)}><FiChevronDown /></BtnMore>
                         </ContainerUser>
                         

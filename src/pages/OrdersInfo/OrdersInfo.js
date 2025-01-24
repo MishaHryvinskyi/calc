@@ -1,4 +1,4 @@
-import { getUsers } from "API/api";
+import { getUsers, removeUser } from "API/api";
 import Info from "components/Info";
 import { useEffect, useState } from "react";
 
@@ -9,8 +9,8 @@ const OrdersInfo = () => {
     useEffect(() => {
        const fetchUsers = async () => {
         try {
-            const data = await getUsers();
-            setUsers(data);
+            const allUser = await getUsers();
+            setUsers(allUser.data);
         } catch (err) {
             console.log(err);
         }
@@ -18,6 +18,11 @@ const OrdersInfo = () => {
 
        fetchUsers();
     }, []);
+
+    const handleDelete = (removedId) => {
+        removeUser(removedId);
+        setUsers((prevUsers) => prevUsers.filter(({ id }) => id !== removedId));
+    };
 
     const toggleShow = (id) => {
         setOpenId((prevId) => (prevId === id ? null : id));
@@ -27,6 +32,7 @@ const OrdersInfo = () => {
             allUser={users} 
             openId={openId} 
             toggleShow={toggleShow}
+            remove={handleDelete}
         />
     )
 }

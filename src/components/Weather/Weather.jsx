@@ -7,7 +7,7 @@ const Weather = () => {
 const [wether, setWether] = useState(null);
 useEffect(() => {
     getWeather()
-        .then(data => {
+        .then(({ data }) => {
             if (data && data.location && data.current) {
                 setWether(data);
             } else {
@@ -17,7 +17,7 @@ useEffect(() => {
         .catch(error => {
             console.error("Failed to fetch weather:", error);
         });
-}, [wether]);
+}, []);
     return (
         <div>
             {(wether) ? (

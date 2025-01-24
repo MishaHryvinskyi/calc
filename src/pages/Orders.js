@@ -11,8 +11,8 @@ const Orders = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const data = await getUsers(); 
-        setUsers(data);
+        const allUser = await getUsers(); 
+        setUsers(allUser.data);
       } catch (error) {
         console.error("Помилка завантаження користувачів:", error); 
       }
