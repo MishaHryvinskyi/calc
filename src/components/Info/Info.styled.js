@@ -40,6 +40,8 @@ const Name = styled.p`
     font-size: 24px;
     font-weight: 600;
     & span {
+        width: 150px;
+        text-align: center;
         display: inline-block;
         padding: 5px 20px;
         font-size: 24px;

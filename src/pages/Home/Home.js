@@ -14,7 +14,6 @@ const Home = () => {
 
     return (
         <>
-        {console.log("message")}
             <CurrentDay>Поточна дата: {`${day} ${date}.${month}.${year}`}</CurrentDay>
             <ClockComponent/>
             <Weather />
