@@ -19,8 +19,8 @@ const OrdersInfo = () => {
        fetchUsers();
     }, []);
 
-    const handleDelete = (removedId) => {
-        removeUser(removedId);
+    const handleDelete = async (removedId) => {
+        await removeUser(removedId);
         setUsers((prevUsers) => prevUsers.filter(({ id }) => id !== removedId));
     };
 
@@ -34,7 +34,7 @@ const OrdersInfo = () => {
             toggleShow={toggleShow}
             remove={handleDelete}
         />
-    )
-}
+    );
+};
 
 export default OrdersInfo;
