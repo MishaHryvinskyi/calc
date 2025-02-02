@@ -32,6 +32,11 @@ const StyledLink = styled(NavLink)`
     box-shadow: 3px 7px 68px 2px white;
   }
 
+  &.active {
+    background-color: orange;
+    box-shadow: 3px 7px 68px 2px rgb(235, 183, 135);
+  }
+
 `;
 
 const List = styled.ul`
