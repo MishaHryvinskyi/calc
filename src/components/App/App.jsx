@@ -5,6 +5,7 @@ import Home from "pages/Home/Home";
 import Order from "pages/Order";
 import Orders from "pages/Orders";
 import OrdersInfo from "pages/OrdersInfo/OrdersInfo";
+import NotFound from "pages/NotFound/NotFound";
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/order" element={<Order/>}/>
         <Route path="/orders" element={<Orders/>}/>
         <Route path="info" element={<OrdersInfo/>}/>
+        <Route path="*" element={<NotFound/>}/>
       </Route>
     </Routes>
   );
