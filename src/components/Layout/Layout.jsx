@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { StyledLink, List, Header, Footer } from "./Layout.styled";
 import { FaHome, FaListAlt } from "react-icons/fa";
@@ -25,7 +26,9 @@ const Layout = () => {
             </nav>
         </Header>
         <main>
-            <Outlet />
+            <Suspense fallback={<div>Іде загрузка...</div>}>
+                <Outlet />
+            </Suspense>
         </main>
         <Footer>Центральна Оптика Косів 2025</Footer>
     </>

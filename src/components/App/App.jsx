@@ -1,14 +1,14 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-
 import Layout from "../Layout/Layout";
-import Home from "pages/Home/Home";
-import Order from "pages/Order";
-import Orders from "pages/Orders";
-import OrdersInfo from "pages/OrdersInfo/OrdersInfo";
-import NotFound from "pages/NotFound/NotFound";
+
+const Home = lazy(() => import("pages/Home/Home"));
+const Order = lazy(() => import("pages/Order"));
+const Orders = lazy(() => import("pages/Orders"));
+const OrdersInfo = lazy(() => import("pages/OrdersInfo/OrdersInfo"));
+const NotFound = lazy(() => import("pages/NotFound/NotFound"));
 
 const App = () => {
-
   return (
     <Routes>
       <Route path="/" element={<Layout/>}>
