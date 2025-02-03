@@ -12,7 +12,6 @@ const Tbody = ({ users }) => {
 
   return (
     <tbody>
-      {console.log(users)}
       {users.map(
         ({
           id,
@@ -33,9 +32,7 @@ const Tbody = ({ users }) => {
             Number(lensesPow) +
             Number(job) +
             Number(ton);
-            console.log("ціна за штуку",lenses)
-            console.log(lensesPow);
-
+            
           return (
             <tr key={id}>
               <Td iSurgency={urgency}>{id}</Td>

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const BtnHome = styled(NavLink)`
+export const BtnHome = styled(Link)`
     cursor: pointer;
     padding: 20px 40px;
     background-color: skyblue;
