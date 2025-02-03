@@ -1,13 +1,31 @@
 {
   "files": {
     "main.css": "/calc/static/css/main.3d821254.css",
-    "main.js": "/calc/static/js/main.760950b7.js",
+    "main.js": "/calc/static/js/main.e2817140.js",
+    "static/js/350.f0740b62.chunk.js": "/calc/static/js/350.f0740b62.chunk.js",
+    "static/js/685.429dac5b.chunk.js": "/calc/static/js/685.429dac5b.chunk.js",
+    "static/js/144.0638a4f3.chunk.js": "/calc/static/js/144.0638a4f3.chunk.js",
+    "static/js/318.8aab6735.chunk.js": "/calc/static/js/318.8aab6735.chunk.js",
+    "static/js/697.118de491.chunk.js": "/calc/static/js/697.118de491.chunk.js",
+    "static/js/989.cf990916.chunk.js": "/calc/static/js/989.cf990916.chunk.js",
+    "static/js/457.81abfdeb.chunk.js": "/calc/static/js/457.81abfdeb.chunk.js",
+    "static/js/36.282f3f16.chunk.js": "/calc/static/js/36.282f3f16.chunk.js",
+    "static/js/974.87ff3aee.chunk.js": "/calc/static/js/974.87ff3aee.chunk.js",
     "index.html": "/calc/index.html",
     "main.3d821254.css.map": "/calc/static/css/main.3d821254.css.map",
-    "main.760950b7.js.map": "/calc/static/js/main.760950b7.js.map"
+    "main.e2817140.js.map": "/calc/static/js/main.e2817140.js.map",
+    "350.f0740b62.chunk.js.map": "/calc/static/js/350.f0740b62.chunk.js.map",
+    "685.429dac5b.chunk.js.map": "/calc/static/js/685.429dac5b.chunk.js.map",
+    "144.0638a4f3.chunk.js.map": "/calc/static/js/144.0638a4f3.chunk.js.map",
+    "318.8aab6735.chunk.js.map": "/calc/static/js/318.8aab6735.chunk.js.map",
+    "697.118de491.chunk.js.map": "/calc/static/js/697.118de491.chunk.js.map",
+    "989.cf990916.chunk.js.map": "/calc/static/js/989.cf990916.chunk.js.map",
+    "457.81abfdeb.chunk.js.map": "/calc/static/js/457.81abfdeb.chunk.js.map",
+    "36.282f3f16.chunk.js.map": "/calc/static/js/36.282f3f16.chunk.js.map",
+    "974.87ff3aee.chunk.js.map": "/calc/static/js/974.87ff3aee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3d821254.css",
-    "static/js/main.760950b7.js"
+    "static/js/main.e2817140.js"
   ]
 }
