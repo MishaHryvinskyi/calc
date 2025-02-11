@@ -153,12 +153,140 @@ export const lensenPriceLitva = [
         price: 970,
     },
     {
-        lensenName: '1.56 ФХС (Фотохром) Photo АСТ.ЦИЛ до -/+ 2.0',
+        lensenName: '1.56 ФХС (Фотохром) Photo Астигматика циліндер до -/+ 2.0',
         price: 650,
+    },
+    // 1.56 Blue-block
+    {
+        lensenName: '1.56 Blue-block -/+ 0.25 до 6.0',
+        price: 300,
+    },
+    {
+        lensenName: '1.56 Blue-block -/+ 6.5 до 8.0',
+        price: 350,
+    },
+    {
+        lensenName: '1.56 Blue-block Астигматика циліндер до -/+ 2.0',
+        price: 300,
+    },
+    {
+        lensenName: '1.56 Blue-block Астигматика циліндер до -/+ 4.0',
+        price: 500,
     },
     // 1.61
     {
         lensenName: '1.61 ФХС (Фотохром) Photo від -/+ 0 до 10.0',
         price: 1600,
+    },
+    // 1.61 Blue-block
+    {
+        lensenName: '1.61 Blue-block 0.0 до + 6.0',
+        price: 1150,
+    },
+    {
+        lensenName: '1.61 Blue-block 0.0 до - 10.0',
+        price: 950,
+    },
+    {
+        lensenName: '1.61 Blue-block Астигматика циліндер до -/+ 2.0',
+        price: 1350,
+    },
+    {
+        lensenName: '1.61 Blue-block Астигматика циліндер до -/+ 4.0',
+        price: 1720,
+    },
+    // 1.67 Blue-block
+    {
+        lensenName: '1.67 Blue-block 0.0 до - 10.0',
+        price: 1650,
+    },
+    {
+        lensenName: '1.67 Blue-block 0.0 до + 6.0',
+        price: 1930,
+    },
+];
+
+export const lensenPriceItalia = [
+    // 1.50
+    {
+        lensenName: '1.50 -/+ від 0.25 до 4.0',
+        price: 515,
+    },
+    {
+        lensenName: '1.50 Астигматика циліндер до -/+ 2.0',
+        price: 515,
+    },
+    {
+        lensenName: '1.50 Астигматика циліндер до -/+ 3.0',
+        price: 580,
+    },
+    {
+        lensenName: '1.50 Астигматика циліндер до -/+ 4.0',
+        price: 680,
+    },
+    // 1.56
+    {
+        lensenName: '1.56 -/+ від 0.25 до 6.0',
+        price: 455,
+    },
+    {
+        lensenName: '1.56 -/+ від 6.5 до 8.0',
+        price: 750,
+    },
+    {
+        lensenName: '1.56 Астигматика циліндер до -/+ 2.0',
+        price: 550,
+    },
+    {
+        lensenName: '1.56 Астигматика циліндер до -/+ 3.0',
+        price: 750,
+    },
+    {
+        lensenName: '1.56 Астигматика циліндер до -/+ 4.0',
+        price: 850,
+    },
+    // 1.56(ФОТОХРОМ)ФХС
+    {
+        lensenName: '1.56 (ФОТОХРОМ)ФХС -/+ до 4.0',
+        price: 1000,
+    },
+    {
+        lensenName: '1.56 (ФОТОХРОМ)ФХС Астигматика циліндер до -/+ 4.0',
+        price: 1200,
+    },
+    // 1.60(IRON)
+    {
+        lensenName: '1.60(IRON) + 0.25 до + 6.0',
+        price: 850,
+    },
+    {
+        lensenName: '1.60(IRON) 0.0 до - 10.0',
+        price: 850,
+    },
+    {
+        lensenName: '1.60(IRON)Астигматика циліндер до -/+ 3.0',
+        price: 850,
+    },
+    // 1.60 Blue-block
+    {
+        lensenName: '1.60(Blue-block) + 0.25 до + 6.0',
+        price: 1200,
+    },
+    {
+        lensenName: '1.60(Blue-block) 0.0 до - 10.0',
+        price: 1200,
+    },
+    {
+        lensenName: '1.60(Blue-block)Астигматика циліндер до -/+ 2.0',
+        price: 1200,
+    },
+    // 1.67
+    {
+        lensenName: '1.67 -/+ 0.25 до 10.0',
+        price: 1450,
+    },
+    {
+        lensenName: '1.67 Астигматика циліндер до -/+ 2.0',
+        price: 1450,
     },
 ];
