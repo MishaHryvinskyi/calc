@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const API = 'https://6776676812a55a9a7d0b9792.mockapi.io/orders';
+const API = process.env.REACT_APP_DB;
 const WATHER_URL = 'https://api.weatherapi.com/v1';
-const WATHER_API_KEY = 'c0dca8ed73ba444e8db231919241301';
+const WATHER_API_KEY = process.env.REACT_APP_WATHER_API_KEY;
 const WEATHER_API = `${WATHER_URL}/forecast.json?key=${WATHER_API_KEY}&q=kosiv&days=1&lang=uk`;
 
 const getUsers = async () => {
