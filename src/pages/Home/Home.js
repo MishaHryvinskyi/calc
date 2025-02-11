@@ -3,6 +3,7 @@ import Weather from "components/Weather/Weather";
 import ClockComponent from "components/ClockComponent/ClockComponent";
 import { CurrentDay } from "./Home.styled";
 import { days } from "DB/data";
+import LensesPrice from "components/LensesPrice/LensesPrice";
 
 const Home = () => {
     const [currentTime] = useState(new Date());
@@ -17,6 +18,7 @@ const Home = () => {
             <CurrentDay>Поточна дата: {`${day} ${date}.${month}.${year}`}</CurrentDay>
             <ClockComponent/>
             <Weather />
+            <LensesPrice />
         </>
     );
 };

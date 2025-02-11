@@ -1,4 +1,4 @@
-import { lensenPriceLitva } from "DB/data";
+import { lensenPriceLitva, lensenPriceItalia } from "DB/data";
 import { FieldsetStyled } from "../Form/Form.styled";
 
 const LensesSelected = ({ checkLens, lenses }) => {
@@ -15,9 +15,16 @@ const LensesSelected = ({ checkLens, lenses }) => {
                 disabled
             >Виберіть лінзи згідно рецепту
             </option>
-                {lensenPriceLitva.map(({ lensenName, price }) => 
-                    <option key={lensenName} value={price}>{`${lensenName} ${price}`} грн/шт</option>
-                )}
+                <optgroup label="Литва">
+                    {lensenPriceLitva.map(({ lensenName, price }) => 
+                        <option key={lensenName} value={price}>{`${lensenName} ${price}`} грн/шт</option>
+                    )}
+                </optgroup>
+                <optgroup label="Італія">
+                    {lensenPriceItalia.map(({ lensenName, price }) => 
+                        <option key={lensenName} value={price}>{`${lensenName} ${price}`} грн/шт</option>
+                    )}
+                </optgroup>
             </select>
         </FieldsetStyled>
     );
