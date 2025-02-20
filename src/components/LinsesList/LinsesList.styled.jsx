@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const ContainerLenses = styled.div`
     padding: 30px;
-    border-radius: 50px;
     color: #01352c;
     background-color: #bad8b6;
 

@@ -1,9 +1,9 @@
 import { ContainerLenses } from "./LinsesList.styled";
 
-const LinsesList = ({ title, dataPrice }) => {
+const LinsesList = ({ title, dataPrice, titleIdx }) => {
     return (
         <ContainerLenses>
-            <h2>{title}</h2>
+            <h2>{`${title} ${titleIdx}`}</h2>
             <ul>
                 {dataPrice.map(({ price, lensenName }) =>
                     <li>
